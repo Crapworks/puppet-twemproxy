@@ -7,5 +7,11 @@ class twemproxy::config inherits twemproxy {
       mode    => '0644',
       content => template('twemproxy/config.erb'),
     }
+
+    concat { '/etc/nutcracker.yml':
+      owner => 'root',
+      group => 'root',
+      mode  => '0644',
+    }
   }
 }
