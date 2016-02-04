@@ -11,7 +11,7 @@ define twemproxy::member (
   }
 
   concat::fragment { "${name}_member_block":
-    order   => "01_${order}",
+    order   => "${order}_01",
     target  => '/etc/nutcracker.yml',
     content => template('twemproxy/twemproxy_member_block.erb'),
   }

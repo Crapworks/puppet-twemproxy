@@ -18,7 +18,7 @@ define twemproxy::listen (
   $timeout              = undef,
 ) {
   concat::fragment { "${name}_listen_block":
-    order   => "00_${order}",
+    order   => "${order}_00",
     target  => '/etc/nutcracker.yml',
     content => template('twemproxy/twemproxy_listen_block.erb'),
   }
